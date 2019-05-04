@@ -1,11 +1,11 @@
-import styled from "styled-components/native";
-import Colors from "app/constants/Colors";
-import { StyledText } from "./StyledText";
-import React from "react";
+import styled from 'styled-components/native';
+import Colors from 'app/src/constants/Colors';
+import React from 'react';
+import { StyledText } from './StyledText';
 
 const AsciiContainer = styled.TouchableHighlight.attrs({
   activeOpacity: 0.6,
-  underlayColor: Colors.tintColor
+  underlayColor: Colors.tintColor,
 })`
   justify-content: center;
   text-align: center;
@@ -16,13 +16,13 @@ const AsciiContainer = styled.TouchableHighlight.attrs({
   height: 85;
 `;
 
-export default class AsciiButton extends React.PureComponent{
+export default class AsciiButton extends React.PureComponent {
   render() {
-    const {el, onPress} = this.props;
+    const { el, onPress } = this.props;
     return (
       <AsciiContainer onPress={() => onPress()}>
         <StyledText>{el.ascii}</StyledText>
       </AsciiContainer>
     );
-  };
+  }
 }

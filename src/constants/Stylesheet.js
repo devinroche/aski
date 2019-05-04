@@ -1,48 +1,48 @@
-import { StyleSheet } from "react-native";
-import Colors from "./Colors";
+import { StyleSheet } from 'react-native';
+import Colors from './Colors';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: '#fff',
   },
   gridView: {
-    flex: 1
+    flex: 1,
   },
   itemContainer: {
-    justifyContent: "center",
-    textAlign: "center",
+    justifyContent: 'center',
+    textAlign: 'center',
     borderWidth: 1,
     borderColor: Colors.tintColor,
     borderRadius: 5,
     padding: 0,
-    height: 55
+    height: 55,
   },
   safeArea: { flex: 1, backgroundColor: Colors.textWhite },
   textStyle: {
     fontSize: 14,
-    fontFamily: "Hiragino Mincho ProN",
-    textAlign: "center"
+    fontFamily: 'Hiragino Mincho ProN',
+    textAlign: 'center',
   },
   customBackgroundDialog: {
     opacity: 0.9,
-    backgroundColor: Colors.tintColor
+    backgroundColor: Colors.tintColor,
   },
   sectionHeader: {
-    flexDirection: "row",
+    flexDirection: 'row',
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: Colors.textWhite,
     color: Colors.tintColor,
-    padding: 5
+    padding: 5,
   },
   sectionHeaderText: {
     fontSize: 36,
-    fontWeight: "700",
-    alignItems: "center",
+    fontWeight: '700',
+    alignItems: 'center',
     backgroundColor: Colors.textWhite,
     color: Colors.tintColor,
-    padding: 10
-  }
+    padding: 10,
+  },
 });

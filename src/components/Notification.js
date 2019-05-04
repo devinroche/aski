@@ -1,13 +1,13 @@
-import React from "react";
-import { Text } from "react-native";
+import React from 'react';
+import { Text } from 'react-native';
 import Dialog, {
   DialogContent,
   SlideAnimation,
   DialogTitle,
   DialogFooter,
-  DialogButton
-} from "react-native-popup-dialog";
-import { styles } from 'app/constants/Stylesheet';
+  DialogButton,
+} from 'react-native-popup-dialog';
+import { styles } from 'app/src/constants/Stylesheet';
 
 export default class Notification extends React.PureComponent {
   render() {
@@ -22,35 +22,35 @@ export default class Notification extends React.PureComponent {
         animationDuration={200}
         width={1}
         dialogStyle={{
-          position: "absolute",
+          position: 'absolute',
           top: 0,
-          backgroundColor: "#9980FA"
+          backgroundColor: '#9980FA',
         }}
         dialogAnimation={
           new SlideAnimation({
-            slideFrom: "top"
+            slideFrom: 'top',
           })
         }
-        dialogTitle={
+        dialogTitle={(
           <DialogTitle
             title="Copied to clipboard!"
             hasTitleBar={false}
-            textStyle={{ color: "#fff", paddingTop: "10%" }}
+            textStyle={{ color: '#fff', paddingTop: '10%' }}
           />
-        }
-        footer={
+)}
+        footer={(
           <DialogFooter>
             <DialogButton
-              textStyle={{ color: "#fff" }}
+              textStyle={{ color: '#fff' }}
               text="close"
               onPress={() => closeModal()}
             />
           </DialogFooter>
-        }
+)}
       >
         {el && (
           <DialogContent>
-            <Text style={{ fontSize: 18, color: "#fff", textAlign: "center" }}>
+            <Text style={{ fontSize: 18, color: '#fff', textAlign: 'center' }}>
               {el.ascii}
             </Text>
           </DialogContent>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import { AppContainer } from "./navigation/AppNavigator";
+import { AppContainer } from "./src/navigation/AppNavigator";
 
 export default class App extends React.Component {
   componentDidMount(){

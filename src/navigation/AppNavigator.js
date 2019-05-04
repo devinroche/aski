@@ -1,10 +1,9 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import ModalScreen from 'app/screens/ModalScreen';
-
-import HomeScreen from 'app/screens/HomeScreen';
+import ModalScreen from 'app/src/screens/ModalScreen';
+import HomeScreen from 'app/src/screens/HomeScreen';
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen
+  Home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
@@ -15,12 +14,12 @@ const MainStack = createStackNavigator(
   {
     Home: {
       screen: HomeScreen,
-    }
+    },
   },
   {
     mode: 'modal',
     headerMode: 'none',
-  }
+  },
 );
 
 const RootStack = createStackNavigator(
@@ -35,7 +34,7 @@ const RootStack = createStackNavigator(
   {
     mode: 'modal',
     headerMode: 'none',
-  }
+  },
 );
 
 export const AppContainer = createAppContainer(RootStack);

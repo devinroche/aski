@@ -1,43 +1,40 @@
-import React from "react";
+import React from 'react';
 import {
   Text,
   SafeAreaView,
   View,
-  TouchableOpacity,
-  Clipboard
-} from "react-native";
-import { Notification, AsciiButton } from "app/components";
-import { styles } from "app/constants/Stylesheet";
-import { save } from "app/utils";
-import { ascii } from "app/assets/data";
-import { SectionGrid } from "react-native-super-grid";
+  Clipboard,
+} from 'react-native';
+import { Notification, AsciiButton } from 'app/src/components';
+import { styles } from 'app/src/constants/Stylesheet';
+import { save } from 'app/src/utils';
+import { ascii } from 'app/src/assets/data';
+import { SectionGrid } from 'react-native-super-grid';
 
 export default class HomeScreen extends React.Component {
   state = { modal: false, el: null };
 
-  setClipboard = el => {
+  setClipboard = (el) => {
     const { ascii } = el;
     Clipboard.setString(ascii);
     save(el);
   };
 
-  toggleModal = el => {
+  toggleModal = (el) => {
     this.setState({ modal: true, el });
-    setTimeout(() => this.setState({modal: false, el: undefined}), 3000);
+    setTimeout(() => this.setState({ modal: false, el: undefined }), 3000);
   }
 
-  renderBtn = el => {
-    return (
-      <AsciiButton
-        el={el}
-        onPress={() => {
-            this.toggleModal(el)
-            this.setClipboard(el)
-          }
+  renderBtn = el => (
+    <AsciiButton
+      el={el}
+      onPress={() => {
+        this.toggleModal(el);
+        this.setClipboard(el);
+      }
         }
-      />
-    );
-  };
+    />
+  );
 
   // renderNavBtn = () => {
   //   const {
@@ -59,9 +56,9 @@ export default class HomeScreen extends React.Component {
         <SectionGrid
           sections={[
             {
-              title: `Aski`,
-              data: ascii
-            }
+              title: 'Aski',
+              data: ascii,
+            },
           ]}
           style={styles.gridView}
           itemDimension={100}
