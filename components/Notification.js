@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 import Dialog, {
   DialogContent,
   SlideAnimation,
@@ -7,7 +7,7 @@ import Dialog, {
   DialogFooter,
   DialogButton
 } from "react-native-popup-dialog";
-import { styles } from '../constants/Stylesheet';
+import { styles } from 'app/constants/Stylesheet';
 
 export default class Notification extends React.PureComponent {
   render() {
@@ -41,7 +41,6 @@ export default class Notification extends React.PureComponent {
         footer={
           <DialogFooter>
             <DialogButton
-              style={{ borderWidth: 0 }}
               textStyle={{ color: "#fff" }}
               text="close"
               onPress={() => closeModal()}

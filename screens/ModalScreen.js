@@ -1,18 +1,13 @@
 import React from "react";
 import {
-  Image,
-  Platform,
-  Alert,
   StyleSheet,
   Text,
   SafeAreaView,
   View,
   TouchableOpacity,
-  Button,
-  Clipboard
 } from "react-native";
 import { VictoryBar } from "victory-native";
-import { load } from "../utils";
+import { load } from "app/utils";
 
 class ModalScreen extends React.Component {
   state = { data: [], graphData: [1] };
@@ -48,8 +43,7 @@ class ModalScreen extends React.Component {
   };
 
   render() {
-    const { data, graphData } = this.state;
-    console.log(graphData)
+    const { graphData } = this.state;
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
         <View style={styles.sectionHeader}>{this.renderNavBtn()}</View>

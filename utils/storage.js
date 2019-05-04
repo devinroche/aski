@@ -1,5 +1,4 @@
 import { AsyncStorage } from "react-native";
-import { ascii } from '../data';
 
 const STORAGE_KEY = "ASKI_ANALYTICS";
 

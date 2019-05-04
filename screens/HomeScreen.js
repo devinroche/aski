@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
   Clipboard
 } from "react-native";
-import Notification from "../components/Notification";
-import { styles } from "../constants/Stylesheet";
-import { save, load } from "../utils";
-import { ascii } from "../data";
+import { Notification, AsciiButton } from "app/components";
+import { styles } from "app/constants/Stylesheet";
+import { save } from "app/utils";
+import { ascii } from "app/assets/data";
 import { SectionGrid } from "react-native-super-grid";
 
 export default class HomeScreen extends React.Component {
@@ -21,35 +21,37 @@ export default class HomeScreen extends React.Component {
     save(el);
   };
 
-  toggleModal = el => this.setState({ modal: true, el });
+  toggleModal = el => {
+    this.setState({ modal: true, el });
+    setTimeout(() => this.setState({modal: false, el: undefined}), 3000);
+  }
 
   renderBtn = el => {
     return (
-      <TouchableOpacity
+      <AsciiButton
+        el={el}
         onPress={() => {
-          this.toggleModal(el);
-          this.setClipboard(el);
-        }}
-        style={styles.itemContainer}
-      >
-        <Text style={styles.textStyle}>{el.ascii}</Text>
-      </TouchableOpacity>
+            this.toggleModal(el)
+            this.setClipboard(el)
+          }
+        }
+      />
     );
   };
 
-  renderNavBtn = () => {
-    const {
-      navigation: { navigate }
-    } = this.props;
-    return (
-      <TouchableOpacity
-        style={{ justifySelf: "flex-end", marginLeft: "auto" }}
-        onPress={() => navigate("Modal")}
-      >
-        <Text>Stats</Text>
-      </TouchableOpacity>
-    );
-  };
+  // renderNavBtn = () => {
+  //   const {
+  //     navigation: { navigate }
+  //   } = this.props;
+  //   return (
+  //     <TouchableOpacity
+  //       style={{ justifySelf: "flex-end", marginLeft: "auto" }}
+  //       onPress={() => navigate("Modal")}
+  //     >
+  //       <Text>Stats</Text>
+  //     </TouchableOpacity>
+  //   );
+  // };
 
   render() {
     return (

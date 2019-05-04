@@ -1,7 +1,27 @@
-import React from 'react';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import ModalScreen from '../screens/ModalScreen';
-import MainStack from './MainTabNavigator'
+import ModalScreen from 'app/screens/ModalScreen';
+
+import HomeScreen from 'app/screens/HomeScreen';
+
+const HomeStack = createStackNavigator({
+  Home: HomeScreen
+});
+
+HomeStack.navigationOptions = {
+  tabBarLabel: 'Ascii',
+};
+
+const MainStack = createStackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+    }
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  }
+);
 
 const RootStack = createStackNavigator(
   {
