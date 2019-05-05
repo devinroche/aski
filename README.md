@@ -5,7 +5,7 @@
 > Aski is a fun simple way to get super great ascii emojis
 
 <p align="center">
-  <img src="assets/images/demo.gif" alt="aski demo" />
+  <img src="src/assets/images/demo.gif" alt="aski demo" />
 </p>
 
 ## Running Locally
