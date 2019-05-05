@@ -2804,14 +2804,6 @@ eslint-plugin-jsx-a11y@^6.2.1:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
-eslint-plugin-react-native-a11y@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-native-a11y/-/eslint-plugin-react-native-a11y-1.2.0.tgz#7d128d1e36c81d1418b54745a7fdac6baee1038f"
-  integrity sha512-YI0Om+R7etakx1EAYq/kyBwybVZ46067hIkkVQJfgtPqky81xYi+xRsQmZGUf0ftfXvpCtPsTZOuCzlTheoz6g==
-  dependencies:
-    ast-types-flow "^0.0.7"
-    jsx-ast-utils "^2.0.1"
-
 eslint-plugin-react@^7.13.0:
   version "7.13.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.13.0.tgz#bc13fd7101de67996ea51b33873cd9dc2b7e5758"
@@ -3396,6 +3388,13 @@ expo@^32.0.0:
     serialize-error "^2.1.0"
     uuid-js "^0.7.5"
     whatwg-fetch "^2.0.4"
+
+expokit@32.1.1:
+  version "32.1.1"
+  resolved "https://registry.yarnpkg.com/expokit/-/expokit-32.1.1.tgz#55e763d4fa26eb3627d06fcb12d0e3c87d767c2c"
+  integrity sha512-mUorcCKpI11afzPolBJhpq1trnUcDq5lYoDc/uTOQEJwdFqF8oDa608p50LbNPxC6/583+PrwIgQmiKqKO3VIA==
+  dependencies:
+    jsc-android "^224109.1.0"
 
 extend-shallow@^1.1.2:
   version "1.1.4"
@@ -4804,6 +4803,11 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
+
+jsc-android@^224109.1.0:
+  version "224109.1.0"
+  resolved "https://registry.yarnpkg.com/jsc-android/-/jsc-android-224109.1.0.tgz#9749ec92f1e284b3c09befe7c47cc6e60b1f0cdf"
+  integrity sha512-mhALFynePc/wJsUt9BJuH13mSK/dGWtBO/pcYwVV1I0A7iduyqy3fSoAt1b0yI+/B3TzlGyue/gqjPxsqG1HRQ==
 
 jsdom@^11.5.1:
   version "11.12.0"
