@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import Colors from 'app/src/constants/Colors';
 import React from 'react';
-import { StyledText } from './StyledText';
+import StyledText from './StyledText';
 
 const AsciiContainer = styled.TouchableHighlight.attrs({
   activeOpacity: 0.6,

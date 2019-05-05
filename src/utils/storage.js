@@ -11,7 +11,7 @@ export const load = async () => {
     }
     return JSON.parse(data);
   } catch (e) {
-    console.error('Failed to load name.');
+    return Error('Failed to load name.');
   }
 };
 
@@ -22,6 +22,6 @@ export const save = async (obj) => {
       : (data[obj.title] = { count: 1, ascii: obj.ascii });
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   } catch (e) {
-    console.error('Failed to save name.');
+    Error('Failed to save name.');
   }
 };

@@ -1,3 +1,5 @@
+//dont look here plz
+/*
 import React from 'react';
 import {
   StyleSheet,
@@ -6,10 +8,27 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-
+import { VictoryBar } from 'victory-native';
+import { load } from 'app/src/utils';
 
 class ModalScreen extends React.Component {
+  state = { data: [], graphData: [1] };
+
+  async componentDidMount() {
+    const data = await load();
+    const graphData = Object.keys(data).map((o) => {
+      const askiObj = data[o];
+      return { x: askiObj.ascii, y: askiObj.count };
+    });
+    this.setState({ data, graphData });
+  }
+
+  renderBtn = el => (
+    <TouchableOpacity style={styles.itemContainer}>
+      <Text style={styles.textStyle}>{el.ascii}</Text>
+    </TouchableOpacity>
+  );
+
   renderNavBtn = () => {
     const {
       navigation: { pop },
@@ -19,33 +38,18 @@ class ModalScreen extends React.Component {
         style={{ justifySelf: 'flex-start', marginLeft: 'auto' }}
         onPress={() => pop()}
       >
-        <Text style={styles.sectionHeaderText}>
-          <FontAwesome name="remove" size={24} color="#9980FA" />
-        </Text>
+        <Text>x</Text>
       </TouchableOpacity>
     );
   };
 
   render() {
+    const { graphData } = this.state;
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         <View style={styles.sectionHeader}>{this.renderNavBtn()}</View>
         <View style={styles.gridView}>
-          <Text style={[
-            styles.sectionHeaderText,
-            {textAlign: 'center'}
-            ]}>Help</Text>
-
-            <View style={{justifyContent: 'center'}}>
-              <Text style={styles.sectionSubheaderText}>Step 1</Text>
-              <Text style={styles.sectionText}>Find the asset of your dream.</Text>
-
-              <Text style={styles.sectionSubheaderText}>Step 2</Text>
-              <Text style={styles.sectionText}>Press the asset to copy it.</Text>
-
-              <Text style={styles.sectionSubheaderText}>Step 3</Text>
-              <Text style={styles.sectionText}>Paste anywhere!</Text>
-            </View>
+          <VictoryBar data={graphData} />
         </View>
       </SafeAreaView>
     );
@@ -61,8 +65,6 @@ const styles = StyleSheet.create({
   },
   gridView: {
     flex: 1,
-    width: '80%',
-    alignSelf: 'center'
   },
   itemContainer: {
     justifyContent: 'center',
@@ -80,29 +82,13 @@ const styles = StyleSheet.create({
   },
   sectionHeader: {
     flexDirection: 'row',
+    borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
     backgroundColor: '#fff',
     color: '#9980FA',
     width: '100%',
     padding: 10,
-  },
-  sectionSubheaderText: {
-    fontSize: 24,
-    fontWeight: '700',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    color: '#9980FA',
-    paddingVertical: 10,
-    paddingHorizontal: 20
-  },
-  sectionText: {
-    fontSize: 16,
-    fontWeight: '400',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    paddingVertical: 10,
-    paddingHorizontal: 20
   },
   sectionHeaderText: {
     fontSize: 36,
@@ -113,3 +99,5 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
+
+*/

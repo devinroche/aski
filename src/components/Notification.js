@@ -7,7 +7,7 @@ import Dialog, {
   DialogFooter,
   DialogButton,
 } from 'react-native-popup-dialog';
-import { styles } from 'app/src/constants/Stylesheet';
+import styles from 'app/src/constants/Stylesheet';
 
 export default class Notification extends React.PureComponent {
   render() {

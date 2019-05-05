@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import Colors from './Colors';
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     backgroundColor: Colors.textWhite,
     color: Colors.tintColor,
     padding: 5,
@@ -46,3 +46,5 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
 });
+
+export default styles;

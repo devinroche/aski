@@ -1,4 +1,4 @@
-export const ascii = [
+export default [
   { ascii: 'ʘ‿ʘ', title: 'innocent' },
   { ascii: 'ಠ_ಠ', title: 'reddit-disapproval' },
   { ascii: 'ლ(｀ー´ლ)', title: 'fisticuffs' },

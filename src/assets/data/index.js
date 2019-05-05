@@ -1,1 +1,1 @@
-export { ascii } from './ascii.js';
+export { default as ascii } from './ascii';
