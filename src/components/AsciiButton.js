@@ -8,7 +8,6 @@ const AsciiContainer = styled.TouchableHighlight.attrs({
   underlayColor: Colors.tintColor,
 })`
   justify-content: center;
-  text-align: center;
   border-width: 1;
   border-color: ${Colors.tintColor};
   border-radius: 10;
