@@ -1,32 +1,32 @@
-import React from 'react';
+import React from "react";
 import {
   Text,
   SafeAreaView,
   View,
   Clipboard,
   TouchableOpacity
-} from 'react-native';
-import { Notification, AsciiButton } from 'app/src/components';
-import styles from 'app/src/constants/Stylesheet';
-import { save } from 'app/src/utils';
-import { ascii } from 'app/src/assets/data';
-import { SectionGrid } from 'react-native-super-grid';
-import { FontAwesome } from '@expo/vector-icons';
+} from "react-native";
+import { Notification, AsciiButton } from "app/src/components";
+import styles from "app/src/constants/Stylesheet";
+import { save } from "app/src/utils";
+import { ascii } from "app/src/assets/data";
+import { SectionGrid } from "react-native-super-grid";
+import { FontAwesome } from "@expo/vector-icons";
 
-export default class HomeScreen extends React.Component {
+export default class ArtScreen extends React.Component {
   state = { modal: false, el: null };
 
-  setClipboard = (el) => {
+  setClipboard = el => {
     const { ascii } = el;
     Clipboard.setString(ascii);
     save(el);
   };
 
-  toggleModal = (el) => {
+  toggleModal = el => {
     this.setState({ modal: true, el });
 
     setTimeout(() => this.setState({ modal: false, el: undefined }), 3500);
-  }
+  };
 
   renderBtn = el => (
     <AsciiButton
@@ -40,15 +40,15 @@ export default class HomeScreen extends React.Component {
 
   renderNavBtn = () => {
     const {
-      navigation: { navigate }
+      navigation: { pop }
     } = this.props;
     return (
       <TouchableOpacity
-        style={{ justifySelf: "flex-start" }}
-        onPress={() => navigate("Modal")}
+        style={{ justifySelf: "flex-start", marginLeft: "auto" }}
+        onPress={() => pop()}
       >
         <Text style={styles.sectionHeaderText}>
-          <FontAwesome name="question" size={24} color="#9980FA" />
+          <FontAwesome name="remove" size={24} color="#9980FA" />
         </Text>
       </TouchableOpacity>
     );
@@ -61,14 +61,14 @@ export default class HomeScreen extends React.Component {
     return (
       <TouchableOpacity
         style={{ justifySelf: "flex-start" }}
-        onPress={() => navigate("Art")}
+        // onPress={() => navigate("Modal")}
       >
         <Text style={styles.sectionHeaderText}>
           <FontAwesome name="book" size={24} color="#9980FA" />
         </Text>
       </TouchableOpacity>
     );
-  }
+  };
 
   render() {
     return (
@@ -76,9 +76,9 @@ export default class HomeScreen extends React.Component {
         <SectionGrid
           sections={[
             {
-              title: 'Aski',
-              data: ascii,
-            },
+              title: "",
+              data: []
+            }
           ]}
           style={styles.gridView}
           itemDimension={100}
@@ -86,14 +86,14 @@ export default class HomeScreen extends React.Component {
           renderItem={({ item }) => this.renderBtn(item)}
           renderSectionHeader={({ section }) => (
             <View style={styles.sectionHeader}>
-              {/* {this.renderNavBtn()} */}
-              {this.renderExtraBtn()}
               <Text style={styles.sectionHeaderText}>{section.title}</Text>
-              {/* {this.renderExtraBtn()} */}
               {this.renderNavBtn()}
             </View>
           )}
         />
+        <Text style={[styles.sectionHeaderText, { fontSize: 24 }]}>
+          fun things coming soon.
+        </Text>
         <Notification
           {...this.state}
           closeModal={() => {
