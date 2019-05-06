@@ -41,7 +41,7 @@ class ModalScreen extends React.Component {
               <Text style={styles.sectionText}>Find the asset of your dream.</Text>
 
               <Text style={styles.sectionSubheaderText}>Step 2</Text>
-              <Text style={styles.sectionText}>Press the asset to copy it.</Text>
+              <Text style={styles.sectionText}>Tap the asset to copy it.</Text>
 
               <Text style={styles.sectionSubheaderText}>Step 3</Text>
               <Text style={styles.sectionText}>Paste anywhere!</Text>
